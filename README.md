@@ -3,7 +3,7 @@
 
 <br>
 
-<img align="right" width="115" height="49" src="https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/IDB_logo.jpg">
+<img align="right" width="115" height="49" src="./images/IDB_logo.jpg">
 
 # Housing Deficit Estimation
 ![analytics image (flat)](https://raw.githubusercontent.com/vitr/google-analytics-beacon/master/static/badge-flat.gif)
@@ -60,10 +60,10 @@ The geospatial results of **`script2_Indicators.R`** and the **`script5_Predicti
 
 
 <p align="center">
-  <img width="800" src="https://github.com/EL-BID/Housing_Deficit/blob/master/images/Def_Estimation.JPG">
+  <img width="800" src="./images/Def_Estimation.JPG">
 </p>
 
-Detailed, explanation and instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf).
+Detailed, explanation and instructions for the overall Housing Deficit Estimation process can be found [here](./Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf).
 
 
 ## Installation Guide
@@ -109,7 +109,7 @@ Methodology: [Camilo Pecha](http://camilopecha.webflow.io) and [Jordan Jasuta Fi
 ## License
 The Documentation of Support and Use of the software is licensed under Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivative (CC-IGO 3.0 BY-NC-ND)
 
-The codebase of this repo uses [AM-331-A3 Software License](https://github.com/IDB-HUD/Housing_Deficit/blob/master/LICENSE.md).
+The codebase of this repo uses [AM-331-A3 Software License](./LICENSE.md).
 
 
 ## Limitation of responsibilities
