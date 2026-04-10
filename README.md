@@ -12,7 +12,7 @@
 ## Description and Context
 Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using census data as an example.
 
-In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to now-cast the housing deficit in years where no census data is available. More information on the methodology can be found in the [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf).
+In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to now-cast the housing deficit in years where no census data is available. More information on the methodology can be found in the [Housing Deficit Methodology and Guide](./Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf).
 
 Some countries’ statistical institutions publish a specific set of definitions and methodology for calculating housing deficit within that country, as is the case with Peru, and international bodies such as [CEPAL](https://www.cepal.org/es), [MINURVI](https://www.minurvi.org/), and [UN Habitat](http://unhabitat.org/un-habitat-at-a-glance/) provide general guidelines in the absence of a country-specific methodology. In countries where no national methodology exists, this exercise will use a methodology based on UN Habitat and MINURVI guidelines, and the mthodology used by Colombia’s [Departamento Administrativo Nacional de Estadística](https://www.dane.gov.co/) (DANE, the National Statistics Office). In brief:
 
@@ -38,10 +38,10 @@ Two tests are run on the derived indicators using **`script3_Stat_test.R`** to d
 The association analysis patterns among the causes of sub-optimal conditions - for example, Guyanese households lacking access to electricity are 64% more likely to also lack adequate sewerage, suggesting that lack of access to utilities and infrastructure often go hand-in-hand.
 
 <p align="center">
-  <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG">
+  <img width="400" src="./images/AAgraph.JPG">
 </p>
 
-Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or **`script4_Luminosity.R`**, a simple regression is used in **`script5_Predictions.R`** to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division.
+Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](./Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or **`script4_Luminosity.R`**, a simple regression is used in **`script5_Predictions.R`** to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division.
 
 
 ## User Guide
