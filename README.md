@@ -1,3 +1,8 @@
+> [!NOTE]
+> *This repository was originally created and published for the Inter-American Development Bank (IDB) and hosted at [https://github.com/EL-BID/Housing_Deficit](https://web.archive.org/web/20240526185705/https://github.com/EL-BID/Housing_Deficit). As the IDB no longer maintains the repo as public, it is now hosted here for preservation with limited maintenance.*
+
+<br>
+
 <img align="right" width="115" height="49" src="https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/IDB_logo.jpg">
 
 # Housing Deficit Estimation
@@ -5,9 +10,9 @@
 ![analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=pageview&ec=repo&ea=open&dp=/Housing_Deficit/readme&dt=&tid=UA-4677001-16)
 
 ## Description and Context
-Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using census data as an example. 
+Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using census data as an example.
 
-In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to now-cast the housing deficit in years where no census data is available. More information on the methodology can be found in the [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf). 
+In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to now-cast the housing deficit in years where no census data is available. More information on the methodology can be found in the [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf).
 
 Some countries’ statistical institutions publish a specific set of definitions and methodology for calculating housing deficit within that country, as is the case with Peru, and international bodies such as [CEPAL](https://www.cepal.org/es), [MINURVI](https://www.minurvi.org/), and [UN Habitat](http://unhabitat.org/un-habitat-at-a-glance/) provide general guidelines in the absence of a country-specific methodology. In countries where no national methodology exists, this exercise will use a methodology based on UN Habitat and MINURVI guidelines, and the mthodology used by Colombia’s [Departamento Administrativo Nacional de Estadística](https://www.dane.gov.co/) (DANE, the National Statistics Office). In brief:
 
@@ -15,7 +20,7 @@ A household is considered to be experiencing quantitative housing deficit if the
    1. Cohabitation (> 1 household living in the same dwelling)
    2. Acute overcrowding (more than 5 people per bedroom)
 
-A household is considered to be experiencing qualitative housing deficit if any of the following are considered inadequate... 
+A household is considered to be experiencing qualitative housing deficit if any of the following are considered inadequate...
    1. Wall material
    2. Roofing material
    3. Overcrowding situation
@@ -24,54 +29,54 @@ A household is considered to be experiencing qualitative housing deficit if any 
    6. Access to piped sewerage
    7. Access to sanitary garbage disposal
 
-After cleaning and preparing the data (a process which will be different for each area of study but can be guided by **`script1_Data_prep.R`**), these calculations can be run in an adjusted version of **`script2_Indicators.R`**. 
+After cleaning and preparing the data (a process which will be different for each area of study but can be guided by **`script1_Data_prep.R`**), these calculations can be run in an adjusted version of **`script2_Indicators.R`**.
 
-Two tests are run on the derived indicators using **`script3_Stat_test.R`** to determine if the prediction methodology will be an appropriate fit for the data in question: 
+Two tests are run on the derived indicators using **`script3_Stat_test.R`** to determine if the prediction methodology will be an appropriate fit for the data in question:
    1. Association analysis
    2. Coefficient of Variance
 
-The association analysis patterns among the causes of sub-optimal conditions - for example, Guyanese households lacking access to electricity are 64% more likely to also lack adequate sewerage, suggesting that lack of access to utilities and infrastructure often go hand-in-hand. 
+The association analysis patterns among the causes of sub-optimal conditions - for example, Guyanese households lacking access to electricity are 64% more likely to also lack adequate sewerage, suggesting that lack of access to utilities and infrastructure often go hand-in-hand.
 
 <p align="center">
   <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG">
 </p>
 
-Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or **`script4_Luminosity.R`**, a simple regression is used in **`script5_Predictions.R`** to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division. 
+Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or **`script4_Luminosity.R`**, a simple regression is used in **`script5_Predictions.R`** to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division.
 
 
 ## User Guide
-This analysis is run across 5 scripts: 
+This analysis is run across 5 scripts:
 1. script1_Data_prep.R
 2. script2_Indicators.R
 3. script3_Stat_test.R
 4. script4_Luminosity.R
 5. script5_Prediction.R
 
-All scripts can be run at once using the **`Master_script.R`**. Adustments to the indicators above should be considered depending on the census data to which it is applied. For example, flooring material is an important indicator of housing quality, but Guyana's census does not collect this information. If this this methodology is applied to a dataset in which floor material data is available, it should be taken into account. 
+All scripts can be run at once using the **`Master_script.R`**. Adustments to the indicators above should be considered depending on the census data to which it is applied. For example, flooring material is an important indicator of housing quality, but Guyana's census does not collect this information. If this this methodology is applied to a dataset in which floor material data is available, it should be taken into account.
 
-The night lights data originally used to create these scripts was obtained from satellite images available at the National Oceanic and Atmospheric Association's  [Visible Infrared Imaging Radiometer Suite](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) - more recently available through the [Earth Observations Group](https://eogdata.mines.edu/download_dnb_composites.html). The raster data from these images - average luminosity per NDC, a small administrative division - was extracted using QGIS and the shapefiles of the NDCs in Guyana. 
+The night lights data originally used to create these scripts was obtained from satellite images available at the National Oceanic and Atmospheric Association's  [Visible Infrared Imaging Radiometer Suite](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) - more recently available through the [Earth Observations Group](https://eogdata.mines.edu/download_dnb_composites.html). The raster data from these images - average luminosity per NDC, a small administrative division - was extracted using QGIS and the shapefiles of the NDCs in Guyana.
 
-The geospatial results of **`script2_Indicators.R`** and the **`script5_Predictions.R`** can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
+The geospatial results of **`script2_Indicators.R`** and the **`script5_Predictions.R`** can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance.
 
 
 <p align="center">
   <img width="800" src="https://github.com/EL-BID/Housing_Deficit/blob/master/images/Def_Estimation.JPG">
 </p>
 
-Detailed, explanation and instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf). 
+Detailed, explanation and instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf).
 
 
 ## Installation Guide
-The scripts in this repo can be run from R/Rstudio after adjusting the paths of input files. As previously mentioned, QGIS or similar software will be necessary to extract the night lights raster data from the satellite images. 
+The scripts in this repo can be run from R/Rstudio after adjusting the paths of input files. As previously mentioned, QGIS or similar software will be necessary to extract the night lights raster data from the satellite images.
 
 #### Dependencies
-All input data should be housed in the same folder with the R scripts. The working directories set at the beginning of each script should ensure that the files are located by R when indicated. 
+All input data should be housed in the same folder with the R scripts. The working directories set at the beginning of each script should ensure that the files are located by R when indicated.
 
 In addition to the basic R/Rstudio software, which must be installed before the scripts can be opened or run, the following modules will be installed in the process of running the scripts:
 
-`<readstata13>`   *........this is necessary to read Guyana's census data; this may not be necessary for other census data* 
+`<readstata13>`   *........this is necessary to read Guyana's census data; this may not be necessary for other census data*
 
-`<tidyverse>`     *........if the install of this package fails, you may need to update your version of R* 
+`<tidyverse>`     *........if the install of this package fails, you may need to update your version of R*
 
 `<dplyr>`
 
@@ -92,7 +97,7 @@ In addition to the basic R/Rstudio software, which must be installed before the 
 
 
 ## How to Contribute
-Questions or suggestions about this project can be directed to Jordan Jasuta Fischer at <jordan.j.fischer@gmail.com>. For all contributions to this project, this repository may be forked directly. 
+Questions or suggestions about this project can be directed to Jordan Jasuta Fischer at <jordan.j.fischer@gmail.com>. For all contributions to this project, this repository may be forked directly.
 
 
 ## Authors
